@@ -42,7 +42,7 @@ add a key (https://help.github.com/articles/generating-ssh-keys)
 ssh-keygen -t rsa -C “heroku”
 
 
-Build the project
+Bootstrapping the project
 -----------------
 mkdir /c/dev/yeoman-angular-heroku
 cd /c/dev/yeoman-angular-heroku
@@ -57,9 +57,7 @@ git add .
 git commit -m "first commit"
 git remote add origin https://github.com/brettwiesner1977/yeoman-angular-heroku.git
 git push -u origin master
-
 grunt
-
 cd dist
 git init
 git add . 
@@ -70,4 +68,10 @@ git push heroku master
 create a new repo on github (“yeoman-angular-heroku”)
 copy its location
 go to heroku app page and in the settings add the brettwiesner1977/yeoman-angular-heroku to the github repo box
-somewhere in some config file, add another url for this github, then push to heroku
+
+Making changes to the project, building the dist, committing to github and deploying to heroku
+--------------------------------------------------------------------------------------------------
+(make some code changes)
+grunt
+Add to github:
+git commit -a -m "changed some stuff"
