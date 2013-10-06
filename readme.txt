@@ -75,3 +75,9 @@ Making changes to the project, building the dist, committing to github and deplo
 grunt
 Add to github:
 git commit -a -m "changed some stuff"
+git push -u origin master
+(now push to heroku)
+cd dist
+git init (dunno if needed)
+git add .
+git push heroku master
