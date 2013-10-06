@@ -12,12 +12,41 @@ yeoman generators
 git and github account
 node.js
 heroku toolbelt and account
+karma
 
 Setup
 ------
+All this should be done for the git bash shell
+Install yeoman:
+npm install -g yo
+Install grunt and bower:
+npm install -g grunt-cli bower
+Install the angular generator:
+npm install -g generator-angular
+Install the heroku generator
+npm install -g generator-heroku
+Install karma:
+npm install -g karma
+npm install karma --save-dev  (installs karma locally)
+npm install karma-ng-scenario --save-dev
+npm install karma-firefox-launcher --save-dev
+npm install karma-ie-launcher --save-dev
+npm install karma-junit-reporter --save-dev
+npm install grunt-karma --save-dev
+Add the following env vars
+CHRMOE_BIN=C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+FIREFOX_BIN=C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+Git:
+make a github account
+add a key (https://help.github.com/articles/generating-ssh-keys)
+ssh-keygen -t rsa -C “heroku”
 
 
-yo angular
+Build the project
+-----------------
+mkdir /c/dev/yeoman-angular-heroku
+cd /c/dev/yeoman-angular-heroku
+yo angular --minsafe
 grunt
 yo heroku (yes/ copy)
 add to git (create a repo on github, then:)
@@ -35,13 +64,10 @@ cd dist
 git init
 git add . 
 git commit -m “my first commit”
-heroku apps:create
+heroku apps:create yeoman-angular-heroku
+heroku keys:add ~/.ssh/id_rsa.pub
 git push heroku master
-(failed)
-ssh-keygen -t rsa -C “heroku”
-heroku keys:add
-git push heroku master
-create a new repo on github (“heroku-proj-name”)
+create a new repo on github (“yeoman-angular-heroku”)
 copy its location
-go to heroku app page and in the settings add the username/heroku-prog-name.git to the github repo box
+go to heroku app page and in the settings add the brettwiesner1977/yeoman-angular-heroku to the github repo box
 somewhere in some config file, add another url for this github, then push to heroku
